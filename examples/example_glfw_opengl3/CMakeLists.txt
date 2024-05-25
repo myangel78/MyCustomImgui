@@ -28,8 +28,13 @@ include_directories(${IMGUI_DIR}/)
 include_directories(${IMGUI_DIR}/backends/)
 include_directories(${IMGUI_DIR}/examples/libs/glfw/include/)
 
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:MSVCRT.lib")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:legacy_stdio_definitions.lib")
+
+if (WIN32)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:MSVCRT.lib")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:legacy_stdio_definitions.lib")
+elseif (UNIX)
+endif()
+
 
 # 包含静态库路径
 link_directories(${IMGUI_DIR}/examples/libs/glfw/lib-vc2010-64/)
