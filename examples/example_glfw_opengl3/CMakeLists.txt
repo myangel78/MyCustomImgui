@@ -34,13 +34,13 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NODEFAULTLIB:legacy_stdio
 # 包含静态库路径
 link_directories(${IMGUI_DIR}/examples/libs/glfw/lib-vc2010-64/)
 # 链接静态库
-link_libraries(opengl32 glfw3 )
+link_libraries(opengl32 glfw3 imgui)
 
 
 
 add_executable(${FOLDER_NAME} ${IMGUI_DIR}/examples/example_glfw_opengl3/main.cpp  
-      ${IMGUI_SRC}
-      ${IMGUI_HEAD} 
+      #${IMGUI_SRC}
+      #${IMGUI_HEAD} 
       ${IMGUI_IMPL_OPENGL3_SRC}
       ${IMGUI_IMPL_OPENGL3_HEAD} 
       ${IMGUI_IMPL_GLFW_SRC} 

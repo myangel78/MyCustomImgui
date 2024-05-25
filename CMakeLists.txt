@@ -7,8 +7,13 @@ project(MyCustomImgui VERSION 0.1.0)
 # 设置动态库/静态库生成路径
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
+set(PROJECT_DIR ${PROJECT_SOURCE_DIR})
+message("PROJECT_DIR: ${PROJECT_DIR}")
+
 set(IMGUI_DIR ${PROJECT_SOURCE_DIR}/thirdparty/imgui)
 message("IMGUI_DIR: ${IMGUI_DIR}")
+
+
 
 
 # goto subs
