@@ -38,8 +38,13 @@ endif()
 
 # 包含静态库路径
 link_directories(${IMGUI_DIR}/examples/libs/glfw/lib-vc2010-64/)
+if (WIN32)
 # 链接静态库
 link_libraries(opengl32 glfw3 imgui)
+elseif(UNIX)
+link_libraries(glfw  OpenGL imgui dl) 
+endif()
+
 
 
 

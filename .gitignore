@@ -1,2 +1,5 @@
 node_modules
 build/*
+out/*
+.vscode/*
+examples/example_glfw_opengl3/CMakeFiles/*
